@@ -1,0 +1,25 @@
+{
+  "name": "node-firebase",
+  "version": "1.0.0",
+  "description": "node and firebase",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YashdalfTheGray/node-firebase.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Yash Kulshrestha",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/YashdalfTheGray/node-firebase/issues"
+  },
+  "homepage": "https://github.com/YashdalfTheGray/node-firebase#readme",
+  "dependencies": {
+    "firebase": "^3.6.2"
+  }
+}
