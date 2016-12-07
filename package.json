@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/YashdalfTheGray/node-firebase#readme",
   "dependencies": {
+    "dotenv": "^2.0.0",
     "firebase": "^3.6.2"
   }
 }
