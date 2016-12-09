@@ -16,3 +16,16 @@ firebase.database().ref('/data').on('value', s => {
     console.log(s.val());
     process.exit(0);
 });
+
+let newKey = firebase.database().ref().child('data').push().key;
+let updatesToMake = {};
+
+updatesToMake['/data/' + newKey] = {
+    email: 'csta0@rivers.org',
+    first_name: 'Chris',
+    gender: 'Stasek',
+    id: 1,
+    ip_address: '16.09.48.224',
+}
+
+firebase.database().ref().update(updatesToMake).then(result => console.log(result));
