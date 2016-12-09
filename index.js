@@ -12,7 +12,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-firebase.database().ref('/data').once('value').then(s => {
+firebase.database().ref('/data').on('value', s => {
     console.log(s.val());
     process.exit(0);
 });
