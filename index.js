@@ -12,15 +12,26 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-firebase.database().ref('/data').on('value', s => {
-    console.log(s.val());
-    process.exit(0);
-});
+let firebaseData = {};
 
-let newChild = firebase.database().ref().child('data').push();
+function printData() {
+    firebase.database().ref('/data').on('value', s => {
+        console.log(s.val());
+        firebase.database().ref('/data').off();
+        process.exit(0);
+    });
+}
 
-newChild.set({
-    foo: 'bar',
-    baz: false,
-    bat: 10
-});
+function addChild(data) {
+    return firebase.database().ref().child('data').push().set(data);
+}
+
+switch (process.argv[2]) {
+    case 'print':
+        printData();
+        break;
+    default:
+        console.log('Unrecognized command, exiting.');
+        process.exit(0);
+        break;
+};
